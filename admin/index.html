@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Πίνακας Διαχείρισης | ΛΥΣΕΙΣ</title>
 
-    <!-- Φόρτωση Decap CMS από τοπικό φάκελο -->
-    <script src="/admin/js/decap-cms.min.js"></script>
-
-    <!-- Netlify Identity για login -->
+    <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
-      body {
-        font-family: sans-serif;
-        height: 100vh;
+      html, body {
+        height: 100%;
         margin: 0;
         background: #f6f2ee;
+        font-family: sans-serif;
         color: #333;
       }
       #nc-root {
-        height: 100vh;
+        height: 100%;
       }
     </style>
   </head>
   <body>
-    <!-- ✨ Εδώ θα τοποθετηθεί το CMS UI -->
     <div id="nc-root"></div>
 
+    <!-- Φόρτωση Decap CMS ΜΕΤΑ το DOM -->
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        if (window.CMS) {
-          window.CMS.init();
-        } else {
-          document.body.innerHTML +=
-            "<p style='text-align:center;margin-top:2rem;'>Το CMS δεν μπόρεσε να φορτωθεί. Ξαναφόρτωσε τη σελίδα.</p>";
-        }
+      window.addEventListener("load", function() {
+        var script = document.createElement("script");
+        script.src = "/admin/js/decap-cms.min.js";
+        script.onload = function() {
+          if (window.CMS) {
+            window.CMS.init();
+          } else {
+            document.body.innerHTML +=
+              "<p style='text-align:center;margin-top:2rem;'>Το CMS δεν μπόρεσε να φορτωθεί. Ξαναφόρτωσε τη σελίδα.</p>";
+          }
+        };
+        document.body.appendChild(script);
       });
     </script>
   </body>
