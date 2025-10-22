@@ -5,47 +5,40 @@ backend:
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
-publish_mode: editorial_workflow
+locale: "el"
 
 collections:
-  - name: "home"
-    label: "Αρχική"
+  - name: "pages"
+    label: "Σελίδες"
     files:
-      - file: "data/home.json"
-        label: "Κείμενα Αρχικής"
-        name: "home_json"
-        format: "json"
+      - file: "index.html"
+        label: "Αρχική Σελίδα"
+        name: "home"
         fields:
-          - { label: "Τίτλος", name: "intro_title", widget: "string" }
-          - { label: "Κείμενο", name: "intro_text", widget: "text" }
+          - { label: "Τίτλος", name: "title", widget: "string" }
+          - { label: "Περιεχόμενο", name: "body", widget: "markdown" }
 
-  - name: "about"
-    label: "Ποιοι Είμαστε"
-    files:
-      - file: "data/about.json"
-        label: "Κείμενο Σχετικά"
-        name: "about_json"
-        format: "json"
+      - file: "about.html"
+        label: "Ποιοι Είμαστε"
+        name: "about"
         fields:
-          - { label: "Κείμενο (HTML)", name: "body_html", widget: "text" }
+          - { label: "Τίτλος", name: "title", widget: "string" }
+          - { label: "Περιεχόμενο", name: "body", widget: "markdown" }
+
+      - file: "contact.html"
+        label: "Επικοινωνία"
+        name: "contact"
+        fields:
+          - { label: "Διεύθυνση", name: "address", widget: "string" }
+          - { label: "Τηλέφωνο", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Χάρτης (iframe)", name: "map", widget: "text" }
 
   - name: "portfolio"
-    label: "Portfolio (Φωτογραφίες)"
+    label: "Φωτογραφίες"
     folder: "img/portfolio"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Φωτογραφία", name: "image", widget: "image" }
-      - { label: "Alt κείμενο (προαιρετικό)", name: "alt", widget: "string", required: false }
-
-  - name: "contact"
-    label: "Επικοινωνία"
-    files:
-      - file: "data/contact.json"
-        label: "Στοιχεία Επικοινωνίας"
-        name: "contact_json"
-        format: "json"
-        fields:
-          - { label: "Τηλέφωνο", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Διεύθυνση", name: "address", widget: "string" }
+      - { label: "Τίτλος", name: "title", widget: "string" }
+      - { label: "Εικόνα", name: "image", widget: "image" }
