@@ -8,32 +8,6 @@ public_folder: "/img/uploads"
 locale: "el"
 
 collections:
-  - name: "pages"
-    label: "Σελίδες"
-    files:
-      - file: "index.html"
-        label: "Αρχική Σελίδα"
-        name: "home"
-        fields:
-          - { label: "Τίτλος", name: "title", widget: "string" }
-          - { label: "Περιεχόμενο", name: "body", widget: "markdown" }
-
-      - file: "about.html"
-        label: "Ποιοι Είμαστε"
-        name: "about"
-        fields:
-          - { label: "Τίτλος", name: "title", widget: "string" }
-          - { label: "Περιεχόμενο", name: "body", widget: "markdown" }
-
-      - file: "contact.html"
-        label: "Επικοινωνία"
-        name: "contact"
-        fields:
-          - { label: "Διεύθυνση", name: "address", widget: "string" }
-          - { label: "Τηλέφωνο", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Χάρτης (iframe)", name: "map", widget: "text" }
-
   - name: "portfolio"
     label: "Φωτογραφίες"
     folder: "img/portfolio"
