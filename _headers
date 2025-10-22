@@ -1,0 +1,7 @@
+/admin/*
+  Access-Control-Allow-Origin: *
+  Content-Type: text/html; charset=UTF-8
+
+/admin/js/*
+  Access-Control-Allow-Origin: *
+  Content-Type: application/javascript
