@@ -5,3 +5,7 @@
 /admin/js/*
   Access-Control-Allow-Origin: *
   Content-Type: application/javascript
+
+/admin/config.yml
+  Access-Control-Allow-Origin: *
+  Content-Type: text/yaml; charset=UTF-8
