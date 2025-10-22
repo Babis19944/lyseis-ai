@@ -5,12 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Πίνακας Διαχείρισης | ΛΥΣΕΙΣ</title>
 
-    <!-- Νέα έκδοση CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Φόρτωση του νέου Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 
     <!-- Netlify Identity για login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: #f6f2ee;
+        color: #333;
+      }
+      .loading {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
+    <div class="loading">
+      <h2>Φόρτωση πίνακα διαχείρισης...</h2>
+    </div>
+    <script>
+      // φόρτωσε το CMS όταν είναι έτοιμο
+      if (window.CMS) {
+        window.CMS.init();
+      } else {
+        document.write("<p>Το CMS δεν μπόρεσε να φορτωθεί. Κάνε refresh.</p>");
+      }
+    </script>
   </body>
 </html>
