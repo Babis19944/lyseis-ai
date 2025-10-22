@@ -14,29 +14,27 @@
     <style>
       body {
         font-family: sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         height: 100vh;
+        margin: 0;
         background: #f6f2ee;
         color: #333;
       }
-      .loading {
-        text-align: center;
+      #nc-root {
+        height: 100vh;
       }
     </style>
   </head>
   <body>
-    <div class="loading">
-      <h2>Φόρτωση πίνακα διαχείρισης...</h2>
-    </div>
+    <!-- ✨ Εδώ θα τοποθετηθεί το CMS UI -->
+    <div id="nc-root"></div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         if (window.CMS) {
           window.CMS.init();
         } else {
-          document.body.innerHTML += "<p>Το CMS δεν μπόρεσε να φορτωθεί. Ξαναφόρτωσε τη σελίδα.</p>";
+          document.body.innerHTML +=
+            "<p style='text-align:center;margin-top:2rem;'>Το CMS δεν μπόρεσε να φορτωθεί. Ξαναφόρτωσε τη σελίδα.</p>";
         }
       });
     </script>
