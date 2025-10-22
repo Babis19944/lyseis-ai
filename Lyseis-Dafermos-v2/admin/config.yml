@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "home"
+    label: "Αρχική"
+    files:
+      - file: "data/home.json"
+        label: "Κείμενα Αρχικής"
+        name: "home_json"
+        format: "json"
+        fields:
+          - { label: "Τίτλος", name: "intro_title", widget: "string" }
+          - { label: "Κείμενο", name: "intro_text", widget: "text" }
+
+  - name: "about"
+    label: "Ποιοι Είμαστε"
+    files:
+      - file: "data/about.json"
+        label: "Κείμενο Σχετικά"
+        name: "about_json"
+        format: "json"
+        fields:
+          - { label: "Κείμενο (HTML)", name: "body_html", widget: "text" }
+
+  - name: "portfolio"
+    label: "Portfolio (Φωτογραφίες)"
+    folder: "img/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Φωτογραφία", name: "image", widget: "image" }
+      - { label: "Alt κείμενο (προαιρετικό)", name: "alt", widget: "string", required: false }
+
+  - name: "contact"
+    label: "Επικοινωνία"
+    files:
+      - file: "data/contact.json"
+        label: "Στοιχεία Επικοινωνίας"
+        name: "contact_json"
+        format: "json"
+        fields:
+          - { label: "Τηλέφωνο", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Διεύθυνση", name: "address", widget: "string" }
