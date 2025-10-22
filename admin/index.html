@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Πίνακας Διαχείρισης | ΛΥΣΕΙΣ</title>
 
-    <!-- Φόρτωση Decap CMS από ασφαλές CDN -->
-    <script src="./js/decap-cms.min.js"></script>
+    <!-- Φόρτωση Decap CMS από τοπικό φάκελο -->
+    <script src="/admin/js/decap-cms.min.js"></script>
 
     <!-- Netlify Identity για login -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -30,6 +30,7 @@
     <div class="loading">
       <h2>Φόρτωση πίνακα διαχείρισης...</h2>
     </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         if (window.CMS) {
@@ -41,4 +42,3 @@
     </script>
   </body>
 </html>
-
